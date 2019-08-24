@@ -18,3 +18,15 @@ class Solution:
         return o
                 
                 
+Better solution
+
+               
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        lookup = {}
+        for i,num in enumerate(nums):
+            compliment = target - num
+            if(compliment in lookup):
+                return lookup[compliment],i
+            else:
+                lookup[num] = i
